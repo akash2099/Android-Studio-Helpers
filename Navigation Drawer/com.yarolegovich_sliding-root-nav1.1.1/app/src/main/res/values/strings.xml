@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Design App</string>
+
+<!--    // same no. of elements in string-arrays-->
+
+    <string-array name="ld_activityScreenTitles">
+        <item>Dashboard</item>
+        <item>My Profile</item>
+        <item>Messages</item>
+        <item>Cart</item>
+        <item/>
+        <item>Log Out</item>
+    </string-array>
+
+    <string-array name="ld_activityScreenIcons">
+        <item>@drawable/ic_dashboard_black_24dp</item>
+        <item>@drawable/ic_account_circle_black_24dp</item>
+        <item>@drawable/ic_message_black_24dp</item>
+        <item>@drawable/ic_shopping_cart_black_24dp</item>
+        <item>0</item>
+        <item>@drawable/ic_arrow_back_black_24dp</item>
+    </string-array>
+</resources>
