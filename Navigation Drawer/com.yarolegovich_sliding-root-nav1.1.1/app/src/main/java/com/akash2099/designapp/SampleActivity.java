@@ -41,13 +41,18 @@ public class SampleActivity extends AppCompatActivity implements DrawerAdapter.O
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        // Here you can add many more parameters. [ Play with parameters ]
         slidingRootNav = new SlidingRootNavBuilder(this)
+                .withDragDistance(170)
+                .withRootViewScale((float) 0.75)
+                .withRootViewElevation(30)
                 .withToolbarMenuToggle(toolbar)
                 .withMenuOpened(false)
                 .withContentClickableWhenMenuOpened(false)
                 .withSavedState(savedInstanceState)
                 .withMenuLayout(R.layout.drawer_menu)
                 .inject();
+
 
         screenIcons = loadScreenIcons();
         screenTitles = loadScreenTitles();
@@ -57,7 +62,7 @@ public class SampleActivity extends AppCompatActivity implements DrawerAdapter.O
                 createItemFor(POS_ACCOUNT),
                 createItemFor(POS_MESSAGES),
                 createItemFor(POS_CART),
-                new SpaceItem(360),
+                new SpaceItem(350),
                 createItemFor(POS_LOGOUT)));
         adapter.setListener(this);
 
@@ -72,12 +77,27 @@ public class SampleActivity extends AppCompatActivity implements DrawerAdapter.O
     // Need to change this according to my need
     @Override
     public void onItemSelected(int position) {
+        Fragment selectedFragment=null;
+        if (position == POS_DASHBOARD) {
+            selectedFragment=new DashboardFragment();
+        }
+        if (position == POS_ACCOUNT) {
+            selectedFragment=new ProfileFragment();
+        }
+        if (position == POS_MESSAGES) {
+            selectedFragment=new MessegeFragment();
+        }
+        if (position == POS_CART) {
+            selectedFragment=new CartFragment();
+        }
         if (position == POS_LOGOUT) {
             finish();
         }
         slidingRootNav.closeMenu();
-        Fragment selectedScreen = CenteredTextFragment.createFor(screenTitles[position]);
-        showFragment(selectedScreen);
+//         for sending data use the below line
+//        selectedFragment = CenteredTextFragment.createFor(screenTitles[position]); // before
+
+        showFragment(selectedFragment);
         //  modify this part also
     }
 
@@ -85,6 +105,7 @@ public class SampleActivity extends AppCompatActivity implements DrawerAdapter.O
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.container, fragment)
                 .commit();
+
     }
 
     @SuppressWarnings("rawtypes")

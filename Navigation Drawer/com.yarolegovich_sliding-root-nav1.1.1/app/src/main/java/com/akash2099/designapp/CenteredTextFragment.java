@@ -10,6 +10,7 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+// By default fragment better
 public class CenteredTextFragment extends Fragment {
     private static final String EXTRA_TEXT = "text";
 
