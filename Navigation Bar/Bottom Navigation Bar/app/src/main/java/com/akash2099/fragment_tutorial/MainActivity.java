@@ -31,7 +31,8 @@ public class MainActivity extends AppCompatActivity {
 //        forth_frag=new Fragment_4();
 
         // setting the first frame
-        getSupportFragmentManager().beginTransaction().replace(R.id.myFrameLayout,new Fragment_1()).commit();
+
+        getSupportFragmentManager().beginTransaction().replace(R.id.myFrameLayout,Fragment_1.createFor("By Default Home",1)).commit();
 
         // connecting with the BottomNavigationView
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navbar);
@@ -53,7 +54,9 @@ public class MainActivity extends AppCompatActivity {
                     Fragment selectedFragment=null;
                     switch (menuItem.getItemId()){
                         case R.id.nav_home:
-                            selectedFragment=new Fragment_1();
+                            // For sending data to fragments from activity
+                            selectedFragment=Fragment_1.createFor("Send Data from activity to fragment",1);
+//                            selectedFragment=new Fragment_1();
                             break;
                         case R.id.nav_favourites:
                             selectedFragment=new Fragment_2();
