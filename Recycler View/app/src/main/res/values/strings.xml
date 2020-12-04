@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Recycler View Tutorial</string>
+    <string name="details">Details</string>
+
+    <string-array name="programming_languages">
+        <item>C++</item>
+        <item>Go lang</item>
+        <item>Java</item>
+        <item>Javascript</item>
+        <item>Python</item>
+        <item>Swift</item>
+    </string-array>
+
+    <string-array name="language_description">
+        <item>Best language for CP</item>
+        <item>Best language for OVERALL development</item>
+        <item>Best language for APP development</item>
+        <item>Best language for WEB development</item>
+        <item>Best language for DATA SCIENCE development</item>
+        <item>Best language for IOS developers</item>
+    </string-array>
+
+    <integer-array name="language_logo">
+        <item>@drawable/c_logo</item>
+        <item>@drawable/golang_logo</item>
+        <item>@drawable/java_logo</item>
+        <item>@drawable/javascript_logo</item>
+        <item>@drawable/python_logo</item>
+        <item>@drawable/swift_logo</item>
+    </integer-array>
+
+</resources>
