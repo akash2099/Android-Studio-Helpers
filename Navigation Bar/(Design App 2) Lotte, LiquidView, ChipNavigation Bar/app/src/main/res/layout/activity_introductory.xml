@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".IntroductoryActivity">
+
+    <TextView
+        android:id="@+id/app_name_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="76dp"
+        android:elevation="2dp"
+        android:fontFamily="@font/audiowide"
+        android:gravity="center"
+        android:text="DESIGN APP 2"
+        android:textColor="#2E00FF"
+        android:textSize="24sp"
+
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottie"
+        android:layout_width="370dp"
+        android:layout_height="413dp"
+        android:layout_marginTop="52dp"
+        android:elevation="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/app_name_text"
+        app:lottie_autoPlay="true"
+        app:lottie_rawRes="@raw/splash_facebook" />
+
+    <Button
+        android:id="@+id/next_button"
+        android:layout_width="131dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="28dp"
+        android:background="#0E00FF"
+        android:onClick="go_to_next"
+        android:text="START"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lottie" />
+
+    <!--    <com.cuberto.liquid_swipe.LiquidPager-->
+    <!--        android:id="@+id/pager_liquid"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent" />-->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
